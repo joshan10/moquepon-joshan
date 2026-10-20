@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa - ¡Mokepon!</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body class="pagina-mapa">
+    <section id="zona-mapa">
+        <h2 class="subtitulo">Recorre el mapa con tu mokepon</h2>
+        <canvas id="mapa"></canvas>
+        <button class="boton-direccion" ontouchstart="caminar('arriba')" ontouchend="detener()"
+            onmousedown="caminar('arriba')" onmouseup="detener()">Arriba</button>
+        <div class="fila-botones">
+            <button class="boton-direccion" ontouchstart="caminar('izquierda')" ontouchend="detener()"
+                onmousedown="caminar('izquierda')" onmouseup="detener()">Izquierda</button>
+            <button class="boton-direccion" ontouchstart="caminar('abajo')" ontouchend="detener()"
+                onmousedown="caminar('abajo')" onmouseup="detener()">Abajo</button>
+            <button class="boton-direccion" ontouchstart="caminar('derecha')" ontouchend="detener()"
+                onmousedown="caminar('derecha')" onmouseup="detener()">Derecha</button>
+        </div>
+    </section>
+
+    <script src="./js/comun.js"></script>
+    <script src="./js/mapa.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "moquepon-joshan",
+  "version": "1.0.0",
+  "description": "Mokepon: juego multijugador de batalla de mascotas elementales",
+  "main": "servidor.js",
+  "scripts": {
+    "inicio": "node servidor.js",
+    "start": "node servidor.js"
+  },
+  "author": "Joshan Pereira",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

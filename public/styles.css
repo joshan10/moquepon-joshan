@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+    --papel: #fdf3e3;
+    --tinta: #2f2a25;
+    --fondo-tarjeta: #fffaf0;
+    --coral: #e85d4a;
+    --mostaza: #f0b429;
+    --verde: #2f9e44;
+    --azul: #1971c2;
+    --violeta: #7048e8;
+    --naranja: #e8590c;
+    --gris: #ced4da;
+    --sombra: rgba(47, 42, 37, 0.25);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#aviso-conexion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 10px 16px;
+    background-color: var(--coral);
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 3px solid var(--tinta);
+    cursor: pointer;
+}
+
+#aviso-conexion code {
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 1px 6px;
+    border-radius: 6px;
+}
+
+body {
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    background-color: var(--papel);
+    color: var(--tinta);
+}
+
+.titulo {
+    font-family: "Lilita One", sans-serif;
+    color: var(--coral);
+    font-size: 44px;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.subtitulo {
+    font-weight: 800;
+    color: var(--violeta);
+    font-size: 22px;
+    margin-top: 0;
+    text-align: center;
+}
+
+#elegir-mascota,
+#elegir-ataque,
+#zona-mapa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 12px;
+}
+
+.contenedor-tarjetas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tarjeta-mokepon {
+    width: 190px;
+    padding: 14px;
+    background-color: var(--fondo-tarjeta);
+    border: 3px solid var(--tinta);
+    border-radius: 18px;
+    box-shadow: 5px 5px 0 var(--sombra);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.tarjeta-mokepon:hover {
+    transform: translateY(-3px);
+}
+
+.tarjeta-mokepon img {
+    width: 96px;
+}
+
+.tarjeta-mokepon p {
+    margin: 0;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+input:checked + .tarjeta-mokepon {
+    background-color: var(--mostaza);
+    border-color: var(--naranja);
+}
+
+.boton-principal {
+    margin-top: 28px;
+    padding: 12px 42px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+    font-size: 17px;
+    color: #fff;
+    background-color: var(--verde);
+    border: 3px solid var(--tinta);
+    border-radius: 999px;
+    box-shadow: 4px 4px 0 var(--sombra);
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.boton-principal:hover {
+    transform: translateY(-2px);
+}
+
+#lista-ataques {
+    gap: 12px;
+}
+
+.boton-ataque {
+    width: 96px;
+    padding: 12px 0;
+    font-size: 26px;
+    background-color: var(--fondo-tarjeta);
+    border: 3px solid var(--tinta);
+    border-radius: 16px;
+    box-shadow: 4px 4px 0 var(--sombra);
+    cursor: pointer;
+}
+
+.boton-ataque:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.boton-ataque.usado {
+    background-color: var(--gris);
+    box-shadow: none;
+    cursor: default;
+}
+
+.ataque-fuego {
+    border-color: var(--naranja);
+}
+
+.ataque-agua {
+    border-color: var(--azul);
+}
+
+.ataque-tierra {
+    border-color: var(--verde);
+}
+
+#caja-mensajes {
+    margin-top: 24px;
+    padding: 18px 26px;
+    min-width: 280px;
+    background-color: var(--fondo-tarjeta);
+    border: 3px solid var(--violeta);
+    border-radius: 18px;
+    box-shadow: 5px 5px 0 var(--sombra);
+    text-align: center;
+}
+
+#texto-resultado {
+    margin: 0;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--tinta);
+}
+
+#zona-reiniciar {
+    margin-top: 12px;
+}
+
+#zona-reiniciar .boton-principal {
+    margin-top: 0;
+    background-color: var(--coral);
+    padding: 10px 28px;
+}
+
+.historial {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 110px 110px;
+    gap: 10px;
+    padding: 14px;
+    background-color: var(--fondo-tarjeta);
+    border: 3px solid var(--tinta);
+    border-radius: 18px;
+    box-shadow: 5px 5px 0 var(--sombra);
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#marcador-propio,
+#marcador-rival {
+    margin: 0;
+    font-family: "Lilita One", sans-serif;
+    font-size: 34px;
+}
+
+#marcador-propio {
+    color: var(--verde);
+}
+
+#marcador-rival {
+    color: var(--coral);
+}
+
+#nombre-jugador {
+    color: var(--azul);
+    font-weight: 800;
+}
+
+#nombre-enemigo {
+    color: var(--naranja);
+    font-weight: 800;
+}
+
+#historial-jugador {
+    color: var(--violeta);
+}
+
+#historial-enemigo {
+    color: var(--naranja);
+}
+
+#historial-jugador p,
+#historial-enemigo p {
+    margin: 2px 0;
+}
+
+#zona-mapa {
+    justify-content: center;
+}
+
+#mapa {
+    border: 3px solid var(--tinta);
+    border-radius: 12px;
+    background-color: #cfe8cf;
+    box-shadow: 5px 5px 0 var(--sombra);
+    touch-action: none;
+}
+
+.pagina-mapa {
+    /* Evita el desplazamiento de la página al jugar en el mapa */
+    overscroll-behavior: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.boton-direccion {
+    margin-top: 10px;
+    width: 110px;
+    padding: 8px 0;
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+    color: var(--tinta);
+    background-color: var(--mostaza);
+    border: 3px solid var(--tinta);
+    border-radius: 999px;
+    box-shadow: 3px 3px 0 var(--sombra);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.fila-botones {
+    display: flex;
+    gap: 10px;
+}
+
+@media (max-width: 560px) {
+    .contenedor-tarjetas,
+    .fila-botones {
+        flex-direction: column;
+    }
+
+    .historial {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 300px) {
+    .historial {
+        grid-template-columns: 90px 90px;
+    }
+}
